@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(file /Users/ashirarif/php-projects/images/*.png)",
+      "Bash(awk '{print $1}')",
+      "Bash(identify /Users/ashirarif/php-projects/images/*.png)",
+      "Bash(awk '{print $1, $3}')"
     ]
   }
 }
