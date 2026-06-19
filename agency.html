@@ -1534,7 +1534,7 @@ footer::before {
 
       <!-- Brand col -->
       <div class="footer-brand">
-        <p class="footer-brand-desc">Dubai's boldest creative marketing agency. We build brands that cut through noise, dominate feeds, and drive real revenue.</p>
+        <p class="footer-brand-desc">Dubai's video-first content production agency. Cinematic reels, real estate films, commercials and corporate content that generates attention and drives sales.</p>
         <div class="footer-contact-card">
           <a href="mailto:info@cosmicmedia.ae">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1556,10 +1556,11 @@ footer::before {
         <h5>Services</h5>
         <ul>
           <li><a href="#services">Video Production</a></li>
-          <li><a href="#services">Social Media</a></li>
-          <li><a href="#services">Brand Identity</a></li>
-          <li><a href="#services">Video Production</a></li>
-          <li><a href="#services">Growth Strategy</a></li>
+          <li><a href="#real-estate">Real Estate Content</a></li>
+          <li><a href="#services">Social Media Reels</a></li>
+          <li><a href="#services">Commercial Ads</a></li>
+          <li><a href="#services">Corporate Films</a></li>
+          <li><a href="#services">Photography</a></li>
         </ul>
       </div>
 
@@ -1569,16 +1570,17 @@ footer::before {
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#work">Our Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#testimonials">Clients</a></li>
-          <li><a href="#cta">Start a Project</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#founder">Meet Hammad</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#cta">Book a Shoot</a></li>
         </ul>
       </div>
 
       <!-- Newsletter -->
       <div class="footer-col">
         <h5>Newsletter</h5>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Get growth tips, campaign insights &amp; agency news.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px;">Get content tips, production insights &amp; agency news.</p>
         <form onsubmit="return false" style="display:flex;flex-direction:column;gap:10px;">
           <input type="email" placeholder="your@email.com" style="background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--white);padding:12px 16px;font-size:13px;outline:none;font-family:'Inter',sans-serif;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='var(--border)'">
           <button type="submit" style="background:var(--ig-grad);background-size:200%;color:var(--white);padding:12px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Subscribe →</button>
@@ -1693,7 +1695,28 @@ document.querySelectorAll('[data-count]').forEach(el => {
   obs.observe(el);
 });
 
-/* ── 6. Preloader ── */
+/* ── 6. Package tab switcher ── */
+function switchPkg(id, btn) {
+  document.querySelectorAll('.pkg-industry').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.pkg-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('pkg-' + id).classList.add('active');
+  btn.classList.add('active');
+  // re-observe new cards
+  document.querySelectorAll('#pkg-' + id + ' [data-reveal]').forEach(el => {
+    el.classList.remove('in');
+    revealObserver.observe(el);
+  });
+}
+
+/* ── 7. FAQ toggle ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── 8. Preloader ── */
 (function(){
   const loader = document.getElementById('preloader');
   const pct    = document.getElementById('prePct');
