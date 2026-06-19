@@ -95,8 +95,12 @@ nav {
 nav.scrolled { padding:14px var(--pad); }
 .nav-logo { height:40px; filter:brightness(0) invert(1); }
 .nav-links { display:flex; gap:36px; list-style:none; }
-.nav-links a { font-size:13px; letter-spacing:.05em; color:var(--muted); transition:color .2s; text-transform:uppercase; font-weight:500; }
+.nav-links a { font-size:13px; letter-spacing:.05em; color:var(--muted); transition:color .2s; text-transform:uppercase; font-weight:500; position:relative; }
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px; background:var(--ig-grad); transition:width .3s ease; }
 .nav-links a:hover { color:var(--white); }
+.nav-links a:hover::after { width:100%; }
+.nav-links a.active { color:var(--white); }
+.nav-links a.active::after { width:100%; }
 .nav-cta {
   background:var(--ig-grad); background-size:200%;
   color:var(--white); padding:11px 26px;
@@ -1620,6 +1624,25 @@ navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 window.addEventListener('scroll', () =>
   document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60)
 , { passive:true });
+
+/* Active section highlight */
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const sections = Array.from(navLinks)
+  .map(a => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    navLinks.forEach(a => {
+      const match = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('active', match);
+    });
+  });
+}, { threshold:0.25, rootMargin:'-80px 0px -40% 0px' });
+
+sections.forEach(s => sectionObserver.observe(s));
 
 /* ── 3. Hero GSAP entrance ── */
 gsap.registerPlugin(); // load GSAP, no plugins needed
