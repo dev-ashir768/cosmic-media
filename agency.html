@@ -702,7 +702,9 @@ footer::before {
   pointer-events:none;
   overflow:hidden;
 }
-body > *:not(.bg-deco):not(#preloader) { position:relative; z-index:1; }
+body > *:not(.bg-deco):not(#preloader):not(nav):not(.mobile-menu) { position:relative; z-index:1; }
+nav { z-index:100 !important; }
+.mobile-menu { z-index:99; }
 
 /* Starfield — twinkling dots */
 .bg-stars {
