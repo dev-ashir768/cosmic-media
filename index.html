@@ -3912,6 +3912,54 @@
       gap: 16px;
     }
 
+    /* About stats — was connected 2x2 grid with 1px dark gaps */
+    .about-stats {
+      background: transparent !important;
+      gap: 12px !important;
+    }
+    .astat {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 24px 22px;
+    }
+
+    /* About EST. 2014 label — compact pill, not full-width banner */
+    .about-img-label {
+      right: auto !important;
+      bottom: 20px !important;
+      left: 20px !important;
+      padding: 12px 20px !important;
+      gap: 16px;
+    }
+    .about-img-label span { font-size: 22px !important; }
+
+    /* ── HOVER: IG-gradient border on rounded cards ── */
+    .industry-card,
+    .re-feat,
+    .pkg-card,
+    .astat,
+    .shoot-item {
+      transition: transform .25s ease, background .25s, border-color .25s;
+    }
+    .industry-card:hover,
+    .re-feat:hover,
+    .pkg-card:hover,
+    .astat:hover,
+    .shoot-item:hover {
+      background:
+        linear-gradient(var(--bg2), var(--bg2)) padding-box,
+        var(--ig-grad) border-box !important;
+      border: 1.5px solid transparent !important;
+      transform: translateY(-3px);
+    }
+    /* Featured pkg keeps its accent + gradient on hover */
+    .pkg-card.featured {
+      background:
+        linear-gradient(var(--bg2), var(--bg2)) padding-box,
+        var(--ig-grad) border-box;
+      border: 1.5px solid transparent;
+    }
+
     /* ═══════════════════════════════════════════════
        STATS — BENTO REDESIGN
        100M+ featured tall, 10+ Years as full-width banner
