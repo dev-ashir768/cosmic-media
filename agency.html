@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cosmic Media — Creative Marketing Agency</title>
+<title>Cosmic Media — Dubai's Video-First Content Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -582,6 +582,105 @@ footer::before {
   .hero-headline { font-size:clamp(44px,13vw,68px); }
 }
 
+/* ── WHAT WE SHOOT ── */
+#what-we-shoot { padding:clamp(60px,8vw,120px) var(--pad); }
+.shoot-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+.shoot-item { background:var(--bg); padding:28px 20px; display:flex; flex-direction:column; gap:10px; transition:background .25s; cursor:default; }
+.shoot-item:hover { background:var(--bg2); }
+.shoot-num { font-family:'Bebas Neue',sans-serif; font-size:13px; color:var(--accent); letter-spacing:.1em; }
+.shoot-name { font-size:14px; font-weight:600; color:var(--white); line-height:1.3; }
+.shoot-tag { font-size:11px; color:var(--muted); letter-spacing:.05em; }
+
+/* ── INDUSTRIES ── */
+#industries { padding:clamp(60px,8vw,120px) var(--pad); background:var(--bg2); }
+.industries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.industry-card { background:var(--bg); border:1px solid var(--border); padding:28px 24px; display:flex; flex-direction:column; gap:8px; transition:border-color .25s, transform .25s; }
+.industry-card:hover { border-color:var(--accent2); transform:translateY(-4px); }
+.industry-icon { width:40px; height:40px; display:grid; place-items:center; background:rgba(193,53,132,.12); border-radius:8px; color:var(--accent2); margin-bottom:4px; }
+.industry-icon svg { width:20px; height:20px; }
+.industry-name { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--white); }
+.industry-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+
+/* ── PACKAGES ── */
+#packages { padding:clamp(60px,8vw,120px) var(--pad); }
+.pkg-tabs { display:flex; gap:4px; background:var(--bg2); border:1px solid var(--border); padding:4px; width:fit-content; margin:0 auto 48px; border-radius:4px; }
+.pkg-tab { padding:10px 24px; font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); cursor:pointer; border:none; background:none; transition:all .2s; }
+.pkg-tab.active { background:var(--bg3); color:var(--white); }
+.pkg-industry { display:none; }
+.pkg-industry.active { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.pkg-card { background:var(--bg2); border:1px solid var(--border); padding:36px 28px; position:relative; }
+.pkg-card.featured { border-color:var(--accent); }
+.pkg-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--ig-grad); color:var(--white); font-size:10px; font-weight:700; letter-spacing:.1em; padding:4px 14px; text-transform:uppercase; white-space:nowrap; }
+.pkg-tier { font-size:11px; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; font-weight:600; margin-bottom:12px; }
+.pkg-name { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--white); margin-bottom:4px; }
+.pkg-price { font-size:13px; color:var(--muted); margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+.pkg-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+.pkg-list li { font-size:14px; color:var(--muted); display:flex; align-items:center; gap:10px; }
+.pkg-list li::before { content:''; width:16px; height:16px; flex-shrink:0; background:var(--ig-grad); mask:url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; -webkit-mask:url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+.pkg-cta { display:block; width:100%; padding:14px; text-align:center; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--border); color:var(--white); background:none; cursor:pointer; transition:all .25s; }
+.pkg-card.featured .pkg-cta { background:var(--ig-grad); border-color:transparent; }
+.pkg-cta:hover { background:var(--accent); border-color:transparent; }
+
+/* ── REAL ESTATE ── */
+#real-estate { padding:clamp(60px,8vw,120px) var(--pad); background:var(--bg2); }
+.re-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,5vw,80px); align-items:center; }
+.re-content { }
+.re-features { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:32px; }
+.re-feat { background:var(--bg); border:1px solid var(--border); padding:16px; display:flex; align-items:center; gap:12px; transition:border-color .2s; }
+.re-feat:hover { border-color:var(--accent2); }
+.re-feat svg { width:18px; height:18px; color:var(--accent2); flex-shrink:0; }
+.re-feat span { font-size:13px; color:var(--muted); }
+.re-img-stack { position:relative; }
+.re-img-main { width:100%; aspect-ratio:4/5; object-fit:cover; }
+.re-img-badge { position:absolute; bottom:24px; left:-24px; background:var(--bg); border:1px solid var(--border); padding:16px 20px; min-width:180px; }
+.re-img-badge .badge-big { font-family:'Bebas Neue',sans-serif; font-size:32px; background:var(--ig-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.re-img-badge small { font-size:12px; color:var(--muted); display:block; }
+
+/* ── FOUNDER ── */
+#founder { padding:clamp(60px,8vw,120px) var(--pad); }
+.founder-grid { display:grid; grid-template-columns:auto 1fr; gap:clamp(40px,6vw,100px); align-items:center; }
+.founder-img-wrap { position:relative; width:clamp(260px,28vw,400px); }
+.founder-img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; }
+.founder-exp-badge { position:absolute; bottom:-20px; right:-20px; background:var(--ig-grad); color:var(--white); padding:20px 24px; text-align:center; }
+.founder-exp-badge .exp-num { font-family:'Bebas Neue',sans-serif; font-size:48px; line-height:1; }
+.founder-exp-badge .exp-label { font-size:11px; letter-spacing:.1em; text-transform:uppercase; opacity:.85; }
+.founder-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,6vw,80px); color:var(--white); line-height:.95; margin-bottom:8px; }
+.founder-title { font-size:13px; color:var(--accent); letter-spacing:.15em; text-transform:uppercase; margin-bottom:24px; }
+.founder-bio { font-size:16px; color:var(--muted); line-height:1.8; max-width:520px; margin-bottom:32px; }
+.founder-tags { display:flex; flex-wrap:wrap; gap:10px; }
+.founder-tag { padding:8px 16px; border:1px solid var(--border); font-size:12px; color:var(--muted); letter-spacing:.05em; }
+
+/* ── FAQ ── */
+#faq { padding:clamp(60px,8vw,120px) var(--pad); background:var(--bg2); }
+.faq-list { max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:0; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { width:100%; background:none; border:none; text-align:left; padding:24px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer; }
+.faq-q-text { font-size:16px; font-weight:600; color:var(--white); line-height:1.4; }
+.faq-icon { width:24px; height:24px; flex-shrink:0; border:1px solid var(--border); border-radius:50%; display:grid; place-items:center; color:var(--muted); transition:all .25s; }
+.faq-item.open .faq-icon { border-color:var(--accent2); color:var(--accent2); transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+.faq-a-inner { padding:0 0 24px; font-size:14px; color:var(--muted); line-height:1.8; }
+.faq-item.open .faq-a { max-height:200px; }
+
+/* ── RESPONSIVE NEW SECTIONS ── */
+@media(max-width:1024px){
+  .shoot-grid { grid-template-columns:repeat(3,1fr); }
+  .industries-grid { grid-template-columns:repeat(2,1fr); }
+  .re-grid { grid-template-columns:1fr; }
+  .re-img-stack { max-width:480px; }
+  .founder-grid { grid-template-columns:1fr; }
+  .founder-img-wrap { width:100%; max-width:400px; }
+  .pkg-industry.active { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:768px){
+  .shoot-grid { grid-template-columns:repeat(2,1fr); }
+  .industries-grid { grid-template-columns:1fr 1fr; }
+  .re-features { grid-template-columns:1fr; }
+  .pkg-tabs { flex-wrap:wrap; width:100%; }
+  .pkg-industry.active { grid-template-columns:1fr; }
+  .re-img-badge { left:12px; bottom:12px; }
+}
+
 /* ── PREFERS REDUCED MOTION ── */
 @media(prefers-reduced-motion:reduce){
   .marquee-track { animation:none; }
@@ -603,8 +702,9 @@ footer::before {
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#work" onclick="closeMobile()">Work</a>
-  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#industries" onclick="closeMobile()">Industries</a>
+  <a href="#packages" onclick="closeMobile()">Packages</a>
+  <a href="#real-estate" onclick="closeMobile()">Real Estate</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -614,11 +714,11 @@ footer::before {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#real-estate">Real Estate</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Let's Talk</button>
+  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Book a Shoot</button>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -628,31 +728,31 @@ footer::before {
 <section id="hero">
   <!-- LEFT -->
   <div class="hero-left">
-    <p class="hero-label" id="heroLabel">Dubai's Premier Creative Agency</p>
+    <p class="hero-label" id="heroLabel">Dubai's Video-First Content Agency</p>
     <h1 class="hero-headline" id="heroHead">
-      <span class="hl">WE BUILD</span>
-      <span class="hl outline">BRANDS</span>
-      <span class="hl ig-text">THAT WIN.</span>
+      <span class="hl">WE CREATE</span>
+      <span class="hl outline">CONTENT</span>
+      <span class="hl ig-text">THAT SELLS.</span>
     </h1>
-    <p class="hero-sub" id="heroSub">Bold strategy. Fearless creative. Measurable results. We help ambitious brands dominate their market across every digital platform.</p>
+    <p class="hero-sub" id="heroSub">Cinematic real estate videos, social media reels, commercials, corporate films, event coverage and branded content — designed to generate attention, engagement and sales.</p>
     <div class="hero-actions" id="heroActions">
       <button class="btn-ig" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">See Our Work</button>
-      <button class="btn-outline" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Start a Project →</button>
+      <button class="btn-outline" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Book a Shoot →</button>
     </div>
     <div class="hero-trust" id="heroTrust">
       <div class="trust-item">
-        <span class="trust-num">50M+</span>
-        <span class="trust-label">Views Delivered</span>
+        <span class="trust-num">500+</span>
+        <span class="trust-label">Videos Produced</span>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
-        <span class="trust-num">3.5×</span>
-        <span class="trust-label">Avg ROAS</span>
+        <span class="trust-num">100M+</span>
+        <span class="trust-label">Video Views</span>
       </div>
       <div class="trust-divider"></div>
       <div class="trust-item">
-        <span class="trust-num">98%</span>
-        <span class="trust-label">Retention Rate</span>
+        <span class="trust-num">10+</span>
+        <span class="trust-label">Years Experience</span>
       </div>
     </div>
   </div>
@@ -661,21 +761,21 @@ footer::before {
   <div class="hero-right" id="heroRight">
     <div class="hero-visual">
       <div class="hero-main-img-wrap">
-        <img src="images/genz-poster-wall.png" alt="Cosmic Media campaigns" class="hero-main-img">
+        <img src="images/genz-poster-wall.png" alt="Cosmic Media video production" class="hero-main-img">
       </div>
       <!-- Floating badges -->
       <div class="hero-badge badge-roas" id="b1">
-        <div class="badge-live"><span class="badge-live-dot"></span><span class="badge-live-text">Live Campaign</span></div>
-        <div class="badge-num">4.2×</div>
-        <div class="badge-label">Return on Ad Spend</div>
+        <div class="badge-live"><span class="badge-live-dot"></span><span class="badge-live-text">Now Shooting</span></div>
+        <div class="badge-num">4K</div>
+        <div class="badge-label">Cinematic Production</div>
       </div>
       <div class="hero-badge badge-views" id="b2">
-        <div class="badge-num">12M+</div>
-        <div class="badge-label">Impressions / Month</div>
+        <div class="badge-num">500+</div>
+        <div class="badge-label">Videos Produced</div>
       </div>
       <div class="hero-badge badge-clients" id="b3">
-        <div class="badge-num">15+</div>
-        <div class="badge-label">Elite UAE Brands</div>
+        <div class="badge-num">50+</div>
+        <div class="badge-label">UAE Brands Served</div>
       </div>
     </div>
   </div>
@@ -687,26 +787,88 @@ footer::before {
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee-wrap" aria-label="Our services">
+<div class="marquee-wrap" aria-label="What we produce">
   <div class="marquee-track">
-    <div class="marquee-item active"><span class="dot"></span>Brand Strategy</div>
-    <div class="marquee-item"><span class="dot"></span>Paid Media</div>
-    <div class="marquee-item active"><span class="dot"></span>Social Media</div>
-    <div class="marquee-item"><span class="dot"></span>Content Creation</div>
     <div class="marquee-item active"><span class="dot"></span>Video Production</div>
-    <div class="marquee-item"><span class="dot"></span>Identity Design</div>
-    <div class="marquee-item active"><span class="dot"></span>Growth Strategy</div>
-    <div class="marquee-item"><span class="dot"></span>Campaign Management</div>
-    <div class="marquee-item active"><span class="dot"></span>Brand Strategy</div>
-    <div class="marquee-item"><span class="dot"></span>Paid Media</div>
-    <div class="marquee-item active"><span class="dot"></span>Social Media</div>
-    <div class="marquee-item"><span class="dot"></span>Content Creation</div>
+    <div class="marquee-item"><span class="dot"></span>Real Estate Films</div>
+    <div class="marquee-item active"><span class="dot"></span>Social Media Reels</div>
+    <div class="marquee-item"><span class="dot"></span>Commercial Ads</div>
+    <div class="marquee-item active"><span class="dot"></span>Corporate Films</div>
+    <div class="marquee-item"><span class="dot"></span>Drone Cinematography</div>
+    <div class="marquee-item active"><span class="dot"></span>Event Coverage</div>
+    <div class="marquee-item"><span class="dot"></span>Brand Photography</div>
     <div class="marquee-item active"><span class="dot"></span>Video Production</div>
-    <div class="marquee-item"><span class="dot"></span>Identity Design</div>
-    <div class="marquee-item active"><span class="dot"></span>Growth Strategy</div>
-    <div class="marquee-item"><span class="dot"></span>Campaign Management</div>
+    <div class="marquee-item"><span class="dot"></span>Real Estate Films</div>
+    <div class="marquee-item active"><span class="dot"></span>Social Media Reels</div>
+    <div class="marquee-item"><span class="dot"></span>Commercial Ads</div>
+    <div class="marquee-item active"><span class="dot"></span>Corporate Films</div>
+    <div class="marquee-item"><span class="dot"></span>Drone Cinematography</div>
+    <div class="marquee-item active"><span class="dot"></span>Event Coverage</div>
+    <div class="marquee-item"><span class="dot"></span>Brand Photography</div>
   </div>
 </div>
+
+<!-- WHAT WE SHOOT -->
+<section id="what-we-shoot">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <p class="section-tag" style="justify-content:center;" data-reveal>Content We Produce</p>
+      <h2 class="section-title" data-reveal>WHAT WE <span class="out">SHOOT</span></h2>
+    </div>
+    <div class="shoot-grid">
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">01</span>
+        <span class="shoot-name">Luxury Real Estate Videos</span>
+        <span class="shoot-tag">Villas · Apartments · Off-plan</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">02</span>
+        <span class="shoot-name">Social Media Reels</span>
+        <span class="shoot-tag">Instagram · TikTok · Shorts</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">03</span>
+        <span class="shoot-name">Commercial Ads</span>
+        <span class="shoot-tag">TV · Digital · Out-of-Home</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">04</span>
+        <span class="shoot-name">Corporate Films</span>
+        <span class="shoot-tag">Brand Stories · Profiles</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">05</span>
+        <span class="shoot-name">Restaurant Content</span>
+        <span class="shoot-tag">Food · Ambiance · Chefs</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">06</span>
+        <span class="shoot-name">Event Coverage</span>
+        <span class="shoot-tag">Launches · Exhibitions · Galas</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">07</span>
+        <span class="shoot-name">Fashion Campaigns</span>
+        <span class="shoot-tag">Lookbooks · Editorials</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">08</span>
+        <span class="shoot-name">Drone Cinematography</span>
+        <span class="shoot-tag">Aerial · Property · Landscape</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">09</span>
+        <span class="shoot-name">Realtor Personal Branding</span>
+        <span class="shoot-tag">Headshots · Profile Videos</span>
+      </div>
+      <div class="shoot-item" data-reveal>
+        <span class="shoot-num">10</span>
+        <span class="shoot-name">Wedding Films</span>
+        <span class="shoot-tag">Cinematic · Highlight Reels</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
@@ -714,32 +876,32 @@ footer::before {
     <div class="about-grid">
       <div>
         <p class="about-tag"  data-reveal">Who We Are</p>
-        <h2 class="about-title"  data-reveal">NOT YOUR <span>AVERAGE</span> AGENCY.</h2>
-        <p class="about-desc"  data-reveal">Cosmic Media is a full-service creative marketing agency based in Dubai, UAE. We partner with bold brands to craft strategies that cut through the noise and drive real, measurable growth.</p>
-        <p class="about-desc"  data-reveal">We don't do generic. Every campaign is built from scratch — tailored to your brand, your audience, and your ambition.</p>
+        <h2 class="about-title"  data-reveal">NOT YOUR <span>AVERAGE</span> STUDIO.</h2>
+        <p class="about-desc"  data-reveal">Cosmic Media is Dubai's video-first content production agency. With 10+ years of experience we create cinematic content that stops the scroll, builds brands, and drives real sales — from luxury real estate films to viral social media reels.</p>
+        <p class="about-desc"  data-reveal">We don't do generic. Every shoot is crafted from scratch — tailored to your brand, your audience, and your market.</p>
         <div class="about-stats"  data-reveal">
           <div class="astat">
-            <div class="astat-num" data-count="50">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">M+</span>
-            <p class="astat-label">Views Generated</p>
+            <div class="astat-num" data-count="500">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">+</span>
+            <p class="astat-label">Videos Produced</p>
           </div>
           <div class="astat">
-            <div class="astat-num" data-count="3.5" data-dec="1">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">×</span>
-            <p class="astat-label">Average ROAS</p>
+            <div class="astat-num" data-count="100">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">M+</span>
+            <p class="astat-label">Video Views</p>
           </div>
           <div class="astat">
-            <div class="astat-num" data-count="200">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">+</span>
-            <p class="astat-label">Campaigns Live</p>
+            <div class="astat-num" data-count="50">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">+</span>
+            <p class="astat-label">UAE Brands Served</p>
           </div>
           <div class="astat">
-            <div class="astat-num" data-count="15">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">+</span>
-            <p class="astat-label">Elite Brands Served</p>
+            <div class="astat-num" data-count="10">0</div><span style="font-family:'Bebas Neue';font-size:28px;color:var(--accent);">+</span>
+            <p class="astat-label">Years Experience</p>
           </div>
         </div>
       </div>
       <div class="about-img-wrap"  data-reveal">
-        <img src="images/corporate-meting.png" alt="Cosmic Media creative team" class="about-img">
+        <img src="images/corporate-meting.png" alt="Cosmic Media production team" class="about-img">
         <div class="about-img-label">
-          <span>Est. 2020</span>
+          <span>Est. 2014</span>
           <small>Dubai, UAE</small>
         </div>
       </div>
@@ -751,87 +913,69 @@ footer::before {
 <section id="services">
   <div class="container">
     <div class="section-head">
-      <p class="section-tag"  data-reveal">What We Do</p>
-      <h2 class="section-title"  data-reveal">OUR <span class="out">SERVICES</span></h2>
+      <p class="section-tag" data-reveal>What We Do</p>
+      <h2 class="section-title" data-reveal>OUR <span class="out">SERVICES</span></h2>
     </div>
     <div class="services-grid">
 
-      <div class="service-card"  data-reveal">
+      <div class="service-card" data-reveal>
         <span class="service-num">01</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        </div>
-        <h3 class="service-name">Paid Acquisition</h3>
-        <p class="service-desc">Precision-targeted Meta, TikTok & Google campaigns engineered for maximum ROAS. We turn ad spend into measurable revenue.</p>
-        <a href="#" class="service-link" aria-label="Learn about Paid Acquisition">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="service-card"  data-reveal">
-        <span class="service-num">02</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3 class="service-name">Social Media</h3>
-        <p class="service-desc">From strategy to execution — we build and manage social presences that grow audiences, spark engagement, and drive conversions.</p>
-        <a href="#" class="service-link" aria-label="Learn about Social Media">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="service-card"  data-reveal">
-        <span class="service-num">03</span>
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <h3 class="service-name">Brand Identity</h3>
-        <p class="service-desc">Logo systems, brand guidelines, visual language and messaging frameworks that make your brand unmistakable in any room.</p>
-        <a href="#" class="service-link" aria-label="Learn about Brand Identity">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="service-card"  data-reveal">
-        <span class="service-num">04</span>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
         </div>
         <h3 class="service-name">Video Production</h3>
-        <p class="service-desc">Cinematic brand films, high-converting UGC, Reels and TikToks — content that stops thumbs and starts conversations.</p>
-        <a href="#" class="service-link" aria-label="Learn about Video Production">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <p class="service-desc">Cinematic 4K brand films, commercials, corporate videos and social reels — content that commands attention and converts viewers into buyers.</p>
+        <a href="#cta" class="service-link">Book a Shoot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
-      <div class="service-card"  data-reveal">
+      <div class="service-card" data-reveal>
+        <span class="service-num">02</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <h3 class="service-name">Real Estate Content</h3>
+        <p class="service-desc">Property walkthrough videos, drone footage, lifestyle shoots and realtor personal branding that close deals before the first viewing.</p>
+        <a href="#real-estate" class="service-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <span class="service-num">03</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3 class="service-name">Social Media Reels</h3>
+        <p class="service-desc">High-frequency reel production for Instagram and TikTok. Monthly packages designed to keep your feed active, engaging and growing every week.</p>
+        <a href="#packages" class="service-link">See Packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card" data-reveal>
+        <span class="service-num">04</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h3 class="service-name">Commercial Ads</h3>
+        <p class="service-desc">Broadcast-quality TV and digital commercials with full pre-production, scripting, talent, and post-production. Made to sell.</p>
+        <a href="#cta" class="service-link">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="service-card" data-reveal>
         <span class="service-num">05</span>
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h3 class="service-name">Growth Strategy</h3>
-        <p class="service-desc">Full-funnel growth roadmaps backed by data. We map your audience, identify gaps, and build the playbook to scale fast.</p>
-        <a href="#" class="service-link" aria-label="Learn about Growth Strategy">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <h3 class="service-name">Corporate Films</h3>
+        <p class="service-desc">Company profiles, team culture videos, investor presentations and event highlight reels that build credibility and trust instantly.</p>
+        <a href="#cta" class="service-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
-      <div class="service-card"  data-reveal" style="background:var(--accent);">
+      <div class="service-card" data-reveal style="background:var(--accent);">
         <span class="service-num" style="color:rgba(255,255,255,.3);">06</span>
         <div class="service-icon" style="color:var(--white);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
         </div>
-        <h3 class="service-name" style="color:var(--white);">Let's Build Something</h3>
-        <p class="service-desc" style="color:rgba(255,255,255,.75);">Have a project in mind? Let's talk about how we can help you reach your next milestone.</p>
-        <a href="#cta" class="service-link" style="color:var(--white);" aria-label="Start a project">
-          Get In Touch
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <h3 class="service-name" style="color:var(--white);">Photography</h3>
+        <p class="service-desc" style="color:rgba(255,255,255,.8);">Brand, product, lifestyle and architectural photography — a complete visual library for your website, ads and social channels.</p>
+        <a href="#cta" class="service-link" style="color:var(--white);">Book a Session <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
 
     </div>
@@ -843,53 +987,105 @@ footer::before {
   <div class="container">
     <div class="work-head">
       <div>
-        <p class="section-tag"  data-reveal">Our Work</p>
-        <h2 class="section-title"  data-reveal">SELECTED <span class="out">PROJECTS</span></h2>
+        <p class="section-tag" data-reveal>Our Work</p>
+        <h2 class="section-title" data-reveal>SELECTED <span class="out">PROJECTS</span></h2>
       </div>
-      <a href="#" class="btn-outline" style="align-self:center;" aria-label="View all work">View All Work</a>
+      <a href="#cta" class="btn-outline" style="align-self:center;">Book a Shoot</a>
     </div>
     <div class="work-grid">
-      <div class="work-item"  data-reveal">
-        <img src="images/poster-portrait.png" alt="Brand campaign" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/poster-portrait.png" alt="Real estate video" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Brand Strategy · 2024</p>
-          <h3 class="work-overlay-title">Luxe Properties Dubai — Full Brand Overhaul</h3>
+          <p class="work-overlay-cat">Real Estate Film · 2024</p>
+          <h3 class="work-overlay-title">Luxe Properties — Villa Showcase Film</h3>
         </div>
       </div>
-      <div class="work-item"  data-reveal">
-        <img src="images/genz-poster-wall.png" alt="Social media campaign" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/genz-poster-wall.png" alt="Social media reels" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Social Media · 2024</p>
-          <h3 class="work-overlay-title">Haya Fashion — 300% Instagram Growth</h3>
+          <p class="work-overlay-cat">Social Media Reels · 2024</p>
+          <h3 class="work-overlay-title">Haya Fashion — 30 Reels Monthly Package</h3>
         </div>
       </div>
-      <div class="work-item"  data-reveal">
-        <img src="images/arabic-version.png" alt="Paid media campaign" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/arabic-version.png" alt="Commercial ad" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Paid Media · 2023</p>
-          <h3 class="work-overlay-title">Noir Restaurants — 4.2× ROAS Campaign</h3>
+          <p class="work-overlay-cat">Commercial Ad · 2024</p>
+          <h3 class="work-overlay-title">Noir Restaurant — Launch Campaign</h3>
         </div>
       </div>
-      <div class="work-item"  data-reveal">
-        <img src="images/photoshop-for-brands.png" alt="Video production" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/photoshop-for-brands.png" alt="Brand photography" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Video Production · 2024</p>
-          <h3 class="work-overlay-title">Oud Atelier — Brand Film Series</h3>
+          <p class="work-overlay-cat">Brand Photography · 2024</p>
+          <h3 class="work-overlay-title">Oud Atelier — Product &amp; Lifestyle Shoot</h3>
         </div>
       </div>
-      <div class="work-item"  data-reveal">
-        <img src="images/corporate-meting.png" alt="Brand identity" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/corporate-meting.png" alt="Corporate film" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Brand Identity · 2023</p>
-          <h3 class="work-overlay-title">Al Reef Group — Complete Visual Identity</h3>
+          <p class="work-overlay-cat">Corporate Film · 2023</p>
+          <h3 class="work-overlay-title">Al Reef Group — Company Profile Video</h3>
         </div>
       </div>
-      <div class="work-item"  data-reveal">
-        <img src="images/arabic-version.png" alt="Growth strategy" class="work-img">
+      <div class="work-item" data-reveal>
+        <img src="images/arabic-version.png" alt="Drone cinematography" class="work-img">
         <div class="work-overlay">
-          <p class="work-overlay-cat">Growth Strategy · 2024</p>
-          <h3 class="work-overlay-title">SkyLine Realty — 12M Impressions in 30 Days</h3>
+          <p class="work-overlay-cat">Drone Cinematography · 2024</p>
+          <h3 class="work-overlay-title">SkyLine Realty — Aerial Property Tour</h3>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-tag" data-reveal>Who We Shoot For</p>
+      <h2 class="section-title" data-reveal>INDUSTRIES <span class="out">WE SERVE</span></h2>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <div class="industry-name">Real Estate</div>
+        <div class="industry-desc">Property walkthrough films, drone footage, off-plan projects and realtor personal branding that close deals.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg></div>
+        <div class="industry-name">Restaurants &amp; Cafes</div>
+        <div class="industry-desc">Food cinematography, chef stories, ambiance reels and monthly content packages for F&amp;B brands in Dubai.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-1 11h6a2 2 0 002-2v-5a2 2 0 00-2-2h-6v9z"/></svg></div>
+        <div class="industry-name">Luxury Cars &amp; Auto</div>
+        <div class="industry-desc">Cinematic car reels, test drive videos, launch campaigns and drone footage for dealerships and auto brands.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-3c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg></div>
+        <div class="industry-name">Nightclubs &amp; Lounges</div>
+        <div class="industry-desc">Event coverage, DJ highlights, crowd atmosphere reels and weekly social content that keeps venues packed.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V10l8-6 8 6v10M10 20v-6h4v6"/></svg></div>
+        <div class="industry-name">Resorts &amp; Hotels</div>
+        <div class="industry-desc">Property showcase videos, lifestyle content, drone coverage and guest experience reels for hospitality brands.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="industry-name">Beauty &amp; Clinics</div>
+        <div class="industry-desc">Before/after reels, treatment showcases, staff profiles and monthly social content for salons, spas and clinics.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg></div>
+        <div class="industry-name">Fashion &amp; Retail</div>
+        <div class="industry-desc">Lookbook shoots, campaign films, product photography and social content that make fashion brands stand out.</div>
+      </div>
+      <div class="industry-card" data-reveal>
+        <div class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div class="industry-name">Corporate Business</div>
+        <div class="industry-desc">Company profiles, investor videos, event coverage and internal communications content for established businesses.</div>
       </div>
     </div>
   </div>
@@ -898,21 +1094,269 @@ footer::before {
 <!-- STATS -->
 <section id="stats">
   <div class="stats-strip">
-    <div class="stat-item"  data-reveal">
-      <span class="stat-num"><span class="counter" data-count="50">0</span><span class="stat-sfx">M+</span></span>
-      <p class="stat-label">Views Delivered</p>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num"><span class="counter" data-count="500">0</span><span class="stat-sfx">+</span></span>
+      <p class="stat-label">Videos Produced</p>
     </div>
-    <div class="stat-item"  data-reveal">
-      <span class="stat-num"><span class="counter" data-count="3.5" data-dec="1">0</span><span class="stat-sfx">×</span></span>
-      <p class="stat-label">Avg ROAS</p>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num"><span class="counter" data-count="100">0</span><span class="stat-sfx">M+</span></span>
+      <p class="stat-label">Video Views</p>
     </div>
-    <div class="stat-item"  data-reveal">
-      <span class="stat-num"><span class="counter" data-count="200">0</span><span class="stat-sfx">+</span></span>
-      <p class="stat-label">Campaigns Launched</p>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num"><span class="counter" data-count="50">0</span><span class="stat-sfx">+</span></span>
+      <p class="stat-label">UAE Brands Served</p>
     </div>
-    <div class="stat-item"  data-reveal">
-      <span class="stat-num"><span class="counter" data-count="98">0</span><span class="stat-sfx">%</span></span>
-      <p class="stat-label">Client Retention</p>
+    <div class="stat-item" data-reveal>
+      <span class="stat-num"><span class="counter" data-count="10">0</span><span class="stat-sfx">+</span></span>
+      <p class="stat-label">Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <p class="section-tag" style="justify-content:center;" data-reveal>Monthly Content Plans</p>
+      <h2 class="section-title" data-reveal>CONTENT <span class="out">PACKAGES</span></h2>
+    </div>
+    <div class="pkg-tabs">
+      <button class="pkg-tab active" onclick="switchPkg('restaurant',this)">Restaurants</button>
+      <button class="pkg-tab" onclick="switchPkg('cars',this)">Cars &amp; Auto</button>
+      <button class="pkg-tab" onclick="switchPkg('nightlife',this)">Nightlife</button>
+      <button class="pkg-tab" onclick="switchPkg('hotels',this)">Hotels</button>
+    </div>
+
+    <!-- Restaurant Packages -->
+    <div class="pkg-industry active" id="pkg-restaurant">
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Starter</div>
+        <div class="pkg-name">STARTER</div>
+        <div class="pkg-price">Perfect for new F&amp;B brands</div>
+        <ul class="pkg-list">
+          <li>8 Reels per month</li>
+          <li>20 Edited Photos</li>
+          <li>1 Shoot Day</li>
+          <li>Food &amp; Ambiance Coverage</li>
+          <li>Basic Editing &amp; Captions</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card featured" data-reveal>
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Growth</div>
+        <div class="pkg-name">GROWTH</div>
+        <div class="pkg-price">For scaling restaurants</div>
+        <ul class="pkg-list">
+          <li>16 Reels per month</li>
+          <li>40 Edited Photos</li>
+          <li>2 Shoot Days</li>
+          <li>Food, Chef &amp; Venue Coverage</li>
+          <li>Full Editing &amp; Hashtag Strategy</li>
+          <li>Monthly Performance Report</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Premium</div>
+        <div class="pkg-name">PREMIUM</div>
+        <div class="pkg-price">For established F&amp;B groups</div>
+        <ul class="pkg-list">
+          <li>30 Reels per month</li>
+          <li>Unlimited Edited Photos</li>
+          <li>Full Monthly Coverage</li>
+          <li>Influencer-style Content</li>
+          <li>Paid Ad Creatives included</li>
+          <li>Dedicated Content Manager</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Cars Packages -->
+    <div class="pkg-industry" id="pkg-cars">
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Essential</div>
+        <div class="pkg-name">ESSENTIAL</div>
+        <div class="pkg-price">Single vehicle or event</div>
+        <ul class="pkg-list">
+          <li>4 Cinematic Car Reels</li>
+          <li>20 Edited Photos</li>
+          <li>Half Day Shoot</li>
+          <li>Studio or Location</li>
+          <li>Quick-turn Delivery</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card featured" data-reveal>
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Dealer</div>
+        <div class="pkg-name">DEALER</div>
+        <div class="pkg-price">For active showrooms</div>
+        <ul class="pkg-list">
+          <li>12 Reels per month</li>
+          <li>Test Drive Videos</li>
+          <li>Launch Campaign Content</li>
+          <li>Drone Footage included</li>
+          <li>Photography Package</li>
+          <li>Paid Ad Creatives</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Premium</div>
+        <div class="pkg-name">PREMIUM</div>
+        <div class="pkg-price">Full cinematic production</div>
+        <ul class="pkg-list">
+          <li>20+ Reels per month</li>
+          <li>Cinematic Brand Film</li>
+          <li>Drone + Ground Coverage</li>
+          <li>Professional Models</li>
+          <li>Full Editing Suite</li>
+          <li>Multi-platform Delivery</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Nightlife Packages -->
+    <div class="pkg-industry" id="pkg-nightlife">
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Weekly</div>
+        <div class="pkg-name">WEEKLY</div>
+        <div class="pkg-price">Single night coverage</div>
+        <ul class="pkg-list">
+          <li>4 Event Reels</li>
+          <li>DJ Highlight Clip</li>
+          <li>Crowd Atmosphere Content</li>
+          <li>Same-night Turnaround</li>
+          <li>Stories Format included</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card featured" data-reveal>
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Monthly</div>
+        <div class="pkg-name">MONTHLY</div>
+        <div class="pkg-price">Weekly social presence</div>
+        <ul class="pkg-list">
+          <li>16 Reels per month</li>
+          <li>4 Event Nights covered</li>
+          <li>Promotional Videos</li>
+          <li>Weekly Social Content</li>
+          <li>Promo Graphic Templates</li>
+          <li>Performance Reporting</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Full Club</div>
+        <div class="pkg-name">FULL CLUB</div>
+        <div class="pkg-price">Complete content operation</div>
+        <ul class="pkg-list">
+          <li>30+ Reels per month</li>
+          <li>All Events Covered</li>
+          <li>Artist &amp; DJ Features</li>
+          <li>Paid Ad Creatives</li>
+          <li>Dedicated Videographer</li>
+          <li>24hr Delivery Guarantee</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Hotels Packages -->
+    <div class="pkg-industry" id="pkg-hotels">
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Essentials</div>
+        <div class="pkg-name">ESSENTIALS</div>
+        <div class="pkg-price">Property launch content</div>
+        <ul class="pkg-list">
+          <li>Property Showcase Video</li>
+          <li>30 Edited Photos</li>
+          <li>1 Full Shoot Day</li>
+          <li>Rooms &amp; Facilities</li>
+          <li>Basic Social Content</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card featured" data-reveal>
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Experience</div>
+        <div class="pkg-name">EXPERIENCE</div>
+        <div class="pkg-price">For boutique hotels &amp; resorts</div>
+        <ul class="pkg-list">
+          <li>12 Monthly Reels</li>
+          <li>Lifestyle Content</li>
+          <li>Drone Coverage included</li>
+          <li>Guest Experience Reels</li>
+          <li>Photography Library</li>
+          <li>Booking Platform Assets</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pkg-card" data-reveal>
+        <div class="pkg-tier">Luxury</div>
+        <div class="pkg-name">LUXURY</div>
+        <div class="pkg-price">5-star full production</div>
+        <ul class="pkg-list">
+          <li>20+ Reels per month</li>
+          <li>Cinematic Brand Film</li>
+          <li>Drone &amp; Underwater Footage</li>
+          <li>Professional Models</li>
+          <li>Full Photography Library</li>
+          <li>Multi-language Versions</li>
+        </ul>
+        <button class="pkg-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REAL ESTATE -->
+<section id="real-estate">
+  <div class="container">
+    <div class="re-grid">
+      <div class="re-content">
+        <p class="section-tag" data-reveal>Dubai's #1 Market</p>
+        <h2 class="section-title" data-reveal>REAL ESTATE <span class="out">CONTENT</span><br>THAT CLOSES<br>DEALS.</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.8;margin:24px 0 32px;" data-reveal>Dubai's real estate market moves fast. Our cinematic property videos, drone footage and realtor personal branding content give you the edge to sell villas, apartments and off-plan projects before competitors even finish their brochure.</p>
+        <div class="re-features">
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg>
+            <span>Villa &amp; Apartment Tours</span>
+          </div>
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Drone Aerial Footage</span>
+          </div>
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Realtor Branding</span>
+          </div>
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span>Off-plan Project Films</span>
+          </div>
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H14V7.5"/><path d="M10 9.5c0 .83-.67 1.5-1.5 1.5H3c-.83 0-1.5-.67-1.5-1.5S2.17 8 3 8h5.5c.83 0 1.5.67 1.5 1.5z"/></svg>
+            <span>Lifestyle Shoots</span>
+          </div>
+          <div class="re-feat" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <span>Social Media Content</span>
+          </div>
+        </div>
+        <button onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})" style="margin-top:32px;background:var(--ig-grad);color:var(--white);padding:16px 36px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;" data-reveal>Book a Property Shoot</button>
+      </div>
+      <div class="re-img-stack" data-reveal>
+        <img src="images/poster-portrait.png" alt="Real estate video production Dubai" class="re-img-main">
+        <div class="re-img-badge">
+          <div class="badge-big">4K</div>
+          <small>Cinematic Property Films</small>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -921,114 +1365,131 @@ footer::before {
 <section id="process">
   <div class="container">
     <div class="section-head">
-      <p class="section-tag"  data-reveal">How We Work</p>
-      <h2 class="section-title"  data-reveal">THE <span class="out">PROCESS</span></h2>
+      <p class="section-tag" data-reveal>How We Work</p>
+      <h2 class="section-title" data-reveal>THE <span class="out">PROCESS</span></h2>
     </div>
     <div class="process-list">
-      <div class="process-step"  data-reveal">
+      <div class="process-step" data-reveal>
         <div class="step-accent"></div>
         <div class="step-num">01</div>
-        <h3 class="step-name">Discovery &amp; Audit</h3>
-        <p class="step-desc">We immerse ourselves in your brand, audience, competitors and market position. No assumptions — everything is data-backed.</p>
+        <h3 class="step-name">Brief &amp; Concept</h3>
+        <p class="step-desc">We start with a discovery call to understand your brand, goals and audience. We then develop a creative concept tailored specifically to your shoot.</p>
       </div>
-      <div class="process-step"  data-reveal">
+      <div class="process-step" data-reveal>
         <div class="step-accent"></div>
         <div class="step-num">02</div>
-        <h3 class="step-name">Strategy Blueprint</h3>
-        <p class="step-desc">A custom playbook: channels, messaging, content pillars, budget allocation, and a clear 90-day roadmap to your goals.</p>
+        <h3 class="step-name">Pre-Production</h3>
+        <p class="step-desc">Scripting, storyboarding, location scouting, talent booking, gear prep. Every detail planned so shoot day runs perfectly.</p>
       </div>
-      <div class="process-step"  data-reveal">
+      <div class="process-step" data-reveal>
         <div class="step-accent"></div>
         <div class="step-num">03</div>
-        <h3 class="step-name">Create &amp; Launch</h3>
-        <p class="step-desc">Bold creative production meets precise execution. We build, test, and launch campaigns that are impossible to ignore.</p>
+        <h3 class="step-name">Shoot Day</h3>
+        <p class="step-desc">Our cinematic crew arrives fully equipped — cameras, drones, lighting, audio. We capture everything needed to deliver world-class content.</p>
       </div>
-      <div class="process-step"  data-reveal">
+      <div class="process-step" data-reveal>
         <div class="step-accent"></div>
         <div class="step-num">04</div>
-        <h3 class="step-name">Scale &amp; Optimise</h3>
-        <p class="step-desc">Weekly performance reports, relentless A/B testing, and continuous scaling of what works. We never stop improving.</p>
+        <h3 class="step-name">Edit &amp; Deliver</h3>
+        <p class="step-desc">Professional colour grading, sound design and motion graphics. Final content delivered in all formats ready for social, web and paid ads.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- FOUNDER -->
+<section id="founder">
   <div class="container">
-    <div class="section-head">
-      <p class="section-tag"  data-reveal">Client Words</p>
-      <h2 class="section-title"  data-reveal">WHAT THEY <span class="out">SAY</span></h2>
+    <div class="founder-grid">
+      <div class="founder-img-wrap" data-reveal="left">
+        <img src="images/corporate-meting.png" alt="Hammad - Founder Cosmic Media" class="founder-img">
+        <div class="founder-exp-badge">
+          <div class="exp-num">10+</div>
+          <div class="exp-label">Years in Production</div>
+        </div>
+      </div>
+      <div data-reveal="right">
+        <p class="section-tag">Meet the Founder</p>
+        <h2 class="founder-name">MEET<br>HAMMAD.</h2>
+        <p class="founder-title">Founder &amp; Creative Director — Cosmic Media</p>
+        <p class="founder-bio">With over 10 years behind the camera across UAE and Pakistan, Hammad built Cosmic Media on one belief: great content changes businesses. From corporate films and music videos to luxury real estate and wedding cinematography, he has directed 500+ productions for brands across Dubai and the wider region.</p>
+        <p class="founder-bio" style="margin-top:12px;">When you work with Cosmic Media, you work directly with someone who has been on every type of set — and knows exactly how to make your brand look exceptional on screen.</p>
+        <div class="founder-tags">
+          <span class="founder-tag">Corporate Films</span>
+          <span class="founder-tag">Music Videos</span>
+          <span class="founder-tag">Wedding Films</span>
+          <span class="founder-tag">Real Estate Content</span>
+          <span class="founder-tag">UAE &amp; Pakistan Projects</span>
+          <span class="founder-tag">Commercial Ads</span>
+        </div>
+      </div>
     </div>
-    <div class="testi-grid">
+  </div>
+</section>
 
-      <div class="testi-card"  data-reveal">
-        <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        </div>
-        <p class="testi-quote">Cosmic Media completely transformed our digital presence. ROAS went from 1.8× to 4.6× in 60 days. Their content quality is on another level — nobody understands UAE luxury brands like they do.</p>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Ahmed Al Mansouri">
-          <div>
-            <p class="testi-name">Ahmed Al Mansouri</p>
-            <p class="testi-role">CEO, Luxe Properties Dubai</p>
-          </div>
-        </div>
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <p class="section-tag" style="justify-content:center;" data-reveal>Got Questions</p>
+      <h2 class="section-title" data-reveal>FREQUENTLY <span class="out">ASKED</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What types of videos do you produce?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">We produce real estate walkthrough films, social media reels, commercial ads, corporate profiles, event coverage, drone footage, wedding films, restaurant content, and brand photography. If it needs a camera, we can shoot it.</div></div>
       </div>
-
-      <div class="testi-card"  data-reveal">
-        <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        </div>
-        <p class="testi-quote">The branding package was breathtaking. From logo to social identity, everything cohesive and luxurious. Our Instagram following tripled in 3 months. Best investment we've made.</p>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Sara Al Hamdan">
-          <div>
-            <p class="testi-name">Sara Al Hamdan</p>
-            <p class="testi-role">Founder, Haya Fashion</p>
-          </div>
-        </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How quickly do you deliver content?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Standard delivery is 5–7 business days after shoot day. Rush delivery (24–48 hours) is available as a premium add-on. Monthly package clients receive weekly content drops on an agreed schedule.</div></div>
       </div>
-
-      <div class="testi-card"  data-reveal">
-        <div class="testi-stars">
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <svg class="testi-star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        </div>
-        <p class="testi-quote">Working with Cosmic Media feels like having a full creative department plus a top media buyer in one. Our F&B launch hit 12M impressions month one. Absolute game changers for our group.</p>
-        <div class="testi-author">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Khalid Bin Rashid">
-          <div>
-            <p class="testi-name">Khalid Bin Rashid</p>
-            <p class="testi-role">Director, Noir Restaurants</p>
-          </div>
-        </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you offer monthly content packages?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — we have monthly packages for restaurants, car dealerships, nightclubs, hotels and more. Packages start from 8 reels per month and scale up to full unlimited monthly coverage with dedicated content managers.</div></div>
       </div>
-
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you work outside Dubai?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We're based in Dubai but regularly travel across the UAE and to Pakistan for productions. For international shoots, travel and accommodation costs are quoted separately.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What equipment do you use?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">We shoot in 4K/6K with cinema-grade cameras (Sony FX series, Blackmagic), professional lighting rigs, DJI drone systems, and gimbal stabilisers. Full sound equipment included for corporate and commercial productions.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can you handle scripting and concept development?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. Our pre-production service includes full concept development, scripting, storyboarding, location scouting and talent sourcing. You can come to us with just an idea and we'll handle everything from there.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section id="cta">
-  <div class="cta-bg" aria-hidden="true">GO</div>
+  <div class="cta-bg" aria-hidden="true">SHOOT</div>
   <div class="container" style="position:relative;">
-    <p class="cta-label">Ready to Grow?</p>
-    <h2 class="cta-title">LET'S BUILD<br>SOMETHING<br>GREAT.</h2>
-    <p class="cta-sub">Your next milestone starts with one conversation.</p>
+    <p class="cta-label">Ready to Create?</p>
+    <h2 class="cta-title">LET'S MAKE<br>CONTENT<br>THAT SELLS.</h2>
+    <p class="cta-sub">Book a shoot or ask about our monthly packages. One conversation is all it takes.</p>
     <div class="cta-btns">
-      <button class="btn-white" onclick="window.location='mailto:info@cosmicmedia.ae'">Start a Project</button>
+      <button class="btn-white" onclick="window.location='mailto:info@cosmicmedia.ae'">Book a Shoot</button>
       <button class="btn-white-out" onclick="window.open('https://wa.me/971500000000')">WhatsApp Us</button>
     </div>
   </div>
@@ -1094,7 +1555,7 @@ footer::before {
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="#services">Paid Acquisition</a></li>
+          <li><a href="#services">Video Production</a></li>
           <li><a href="#services">Social Media</a></li>
           <li><a href="#services">Brand Identity</a></li>
           <li><a href="#services">Video Production</a></li>
