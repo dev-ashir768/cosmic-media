@@ -5,7 +5,8 @@
       "Bash(file /Users/ashirarif/php-projects/images/*.png)",
       "Bash(awk '{print $1}')",
       "Bash(identify /Users/ashirarif/php-projects/images/*.png)",
-      "Bash(awk '{print $1, $3}')"
+      "Bash(awk '{print $1, $3}')",
+      "Bash(/opt/homebrew/bin/gh pr create --title 'Reposition Cosmic Media as Dubai'\\\\''s video-first content production agency' --body ' *)"
     ]
   }
 }
