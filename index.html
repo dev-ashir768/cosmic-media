@@ -1155,6 +1155,97 @@ h1, h2, h3, .hero-headline, .section-title, .about-title, .founder-name,
   .reveal { transition:none; }
   * { transition-duration:.01ms !important; animation-duration:.01ms !important; }
 }
+
+/* ═══════════════════════════════════════════════
+   MOBILE CLEAN-UP — declutter, fix grids, show hero
+═══════════════════════════════════════════════ */
+@media(max-width:768px){
+  /* Hide noisy production-style decorative layers — keep only orbs+grid+stars for ambience */
+  .bg-cinema,
+  .bg-filmstrip,
+  .bg-rec,
+  .bg-timecode,
+  .bg-cross,
+  .bg-bracket,
+  .bg-aperture,
+  .bg-tri-outline,
+  .bg-svg-lines,
+  .bg-scanline,
+  .bg-scanline-v,
+  .bg-ring,
+  .bg-halftone { display:none !important; }
+
+  /* Tone down remaining background layers */
+  .bg-grid { opacity:.35; background-size:48px 48px; }
+  .bg-stars { opacity:.25; }
+  .bg-orb { opacity:.22; filter:blur(60px); }
+  .bg-tri { opacity:.08; }
+
+  /* Bring hero video back on mobile (was hidden below 900px) */
+  #hero { grid-template-columns:1fr; gap:32px; padding-top:100px; padding-bottom:60px; }
+  .hero-right { display:flex !important; justify-content:center; }
+  .hero-visual { max-width:100%; }
+  .hero-main-img { aspect-ratio:16/9; }
+  /* Hide the floating badges on the hero video — they overflow on small screens */
+  .hero-badge { display:none; }
+  /* Scroll indicator off mobile */
+  .hero-scroll { display:none; }
+  .hero-trust { gap:18px; padding-top:24px; }
+  .trust-divider { display:none; }
+
+  /* WHAT WE SHOOT — clean single column, kill border grid look */
+  .shoot-grid { grid-template-columns:1fr; gap:0; background:transparent; border:none; }
+  .shoot-item { padding:20px 0; border-bottom:1px solid var(--border); background:transparent; flex-direction:row; align-items:center; gap:14px; }
+  .shoot-item:last-child { border-bottom:none; }
+  .shoot-item:hover { background:transparent; }
+  .shoot-num { font-size:14px; min-width:28px; }
+  .shoot-name { font-size:15px; flex:1; }
+  .shoot-tag { display:none; }
+
+  /* Industries — single column, tighter cards */
+  .industries-grid { grid-template-columns:1fr; gap:12px; }
+  .industry-card { padding:20px 18px; gap:6px; }
+  .industry-name { font-size:18px; }
+  .industry-desc { font-size:12px; }
+
+  /* About stats — 2x2 clean, no heavy boxes */
+  .about-stats { gap:16px; }
+  .astat { padding:16px 0; }
+
+  /* Real estate badge — keep inside */
+  .re-img-badge { left:12px; bottom:12px; right:auto; min-width:0; padding:10px 14px; }
+  .re-img-badge .badge-big { font-size:22px; }
+  .re-img-badge small { font-size:10px; }
+
+  /* Founder badge tucked in */
+  .founder-exp-badge { right:0; bottom:-12px; padding:14px 18px; }
+  .founder-exp-badge .exp-num { font-size:32px; }
+
+  /* About floating label — compact pill, not full-width banner */
+  .about-img-label { left:12px; bottom:12px; right:auto; padding:10px 16px; gap:12px; }
+  .about-img-label span { font-size:18px; }
+  .about-img-label small { font-size:10px; }
+
+  /* About stats — clean, no border grid */
+  .about-stats { background:transparent; gap:12px; margin-top:32px; }
+  .astat { background:transparent; padding:14px 0; border-top:1px solid var(--border); }
+  .astat-num { font-size:36px; }
+  .astat-label { font-size:10px; }
+
+  /* Tighter section padding on mobile */
+  #what-we-shoot, #services, #work, #industries,
+  #packages, #real-estate, #process, #founder, #faq,
+  #about, #cta, #stats { padding-top:56px; padding-bottom:56px; }
+
+  /* Section title size */
+  .section-title { font-size:clamp(36px,9vw,52px); }
+  .about-title { font-size:clamp(38px,10vw,56px); }
+}
+@media(max-width:480px){
+  /* Even more compact at small phone widths */
+  .hero-headline { font-size:clamp(40px,12vw,60px); }
+  .about-stats { grid-template-columns:1fr 1fr; }
+}
 </style>
 </head>
 <body>
