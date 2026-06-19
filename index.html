@@ -3906,6 +3906,101 @@
       border: 1px solid var(--border);
     }
 
+    /* Services grid — was connected grid with 1px dark gaps between rounded cards */
+    .services-grid {
+      background: transparent !important;
+      gap: 16px;
+    }
+
+    /* ═══════════════════════════════════════════════
+       STATS — BENTO REDESIGN
+       100M+ featured tall, 10+ Years as full-width banner
+    ═══════════════════════════════════════════════ */
+    #stats { padding: clamp(40px, 6vw, 80px) var(--pad); }
+    .stats-strip {
+      display: grid !important;
+      grid-template-columns: 1.4fr 1fr 1fr !important;
+      grid-template-rows: auto auto !important;
+      gap: 16px !important;
+      background: transparent !important;
+      border: none !important;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    /* HTML order: 1=500+, 2=100M+, 3=50+, 4=10+ Years */
+    .stats-strip .stat-item:nth-child(1) { grid-column: 2; grid-row: 1; }
+    .stats-strip .stat-item:nth-child(2) {
+      grid-column: 1; grid-row: 1 / 3;
+      background: linear-gradient(135deg, rgba(193,53,132,.18) 0%, rgba(225,48,108,.10) 50%, rgba(247,119,55,.06) 100%);
+      border: 1px solid rgba(225,48,108,.35);
+      padding: clamp(32px, 4vw, 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats-strip .stat-item:nth-child(2)::after {
+      content: '';
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(225,48,108,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .stats-strip .stat-item:nth-child(2) .stat-num {
+      font-size: clamp(64px, 8vw, 120px) !important;
+      background: var(--ig-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .stats-strip .stat-item:nth-child(2) .stat-label {
+      font-size: 13px;
+      letter-spacing: .18em;
+      color: var(--white);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .stats-strip .stat-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .stats-strip .stat-item:nth-child(4) {
+      grid-column: 2 / 4; grid-row: 2;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(20px, 3vw, 32px) clamp(28px, 4vw, 48px);
+      gap: 24px;
+    }
+    .stats-strip .stat-item:nth-child(4) .stat-num {
+      font-size: clamp(40px, 5vw, 64px) !important;
+    }
+    .stats-strip .stat-item:nth-child(4) .stat-label {
+      margin: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .stats-strip {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto auto !important;
+      }
+      .stats-strip .stat-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+      .stats-strip .stat-item:nth-child(2) {
+        grid-column: 1 / 3; grid-row: 2;
+        padding: 28px;
+      }
+      .stats-strip .stat-item:nth-child(2) .stat-num { font-size: clamp(56px, 14vw, 80px) !important; }
+      .stats-strip .stat-item:nth-child(3) { grid-column: 2; grid-row: 1; }
+      .stats-strip .stat-item:nth-child(4) {
+        grid-column: 1 / 3; grid-row: 3;
+        padding: 18px 24px;
+      }
+      .stats-strip .stat-item:nth-child(4) .stat-num { font-size: clamp(32px, 8vw, 48px) !important; }
+    }
+
     /* About floating label — bump radius so it reads as a tag, not a banner */
     .about-img-label {
       border-radius: var(--r-md);
