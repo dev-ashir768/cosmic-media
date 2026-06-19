@@ -1246,6 +1246,147 @@ h1, h2, h3, .hero-headline, .section-title, .about-title, .founder-name,
   .hero-headline { font-size:clamp(40px,12vw,60px); }
   .about-stats { grid-template-columns:1fr 1fr; }
 }
+
+/* ═══════════════════════════════════════════════
+   GLOBAL ROUNDED CORNERS — soften every sharp edge
+═══════════════════════════════════════════════ */
+:root {
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+}
+
+/* Media (images + videos) — round the media itself, NOT the wrapper
+   (wrappers hold floating badges that extend outside the frame) */
+.hero-main-img,
+.about-img,
+.work-img,
+.re-img-main,
+.founder-img { border-radius:var(--r-lg); overflow:hidden; }
+
+/* Wrappers without outside badges can clip safely */
+.about-img-wrap,
+.work-item,
+.hero-main-img-wrap { border-radius:var(--r-lg); overflow:hidden; }
+
+/* Cards */
+.service-card,
+.industry-card,
+.pkg-card,
+.shoot-item,
+.re-feat,
+.astat,
+.stat-item,
+.faq-item,
+.industry-icon,
+.service-icon,
+.testi-card,
+.process-step,
+.mobile-menu-card { border-radius:var(--r-md); }
+
+/* Floating badges & labels */
+.hero-badge,
+.about-img-label,
+.founder-exp-badge,
+.re-img-badge,
+.pkg-badge,
+.badge-roas,
+.badge-views,
+.badge-clients { border-radius:var(--r-sm); }
+
+/* Buttons & CTAs */
+.btn-primary,
+.btn-outline,
+.btn-white,
+.btn-white-out,
+.pkg-cta,
+.nav-cta,
+.pre-skip,
+button[type="submit"],
+input[type="email"],
+input[type="text"],
+.service-link,
+.faq-q { border-radius:var(--r-sm); }
+
+/* Tabs / chips / pills */
+.pkg-tabs { border-radius:var(--r-md); }
+.pkg-tab { border-radius:calc(var(--r-md) - 4px); }
+.marquee-item,
+.founder-tag,
+.trust-item,
+.shoot-num,
+.work-overlay-cat { border-radius:999px; }
+
+/* Nav */
+nav { border-radius:0; } /* keep nav full-width */
+.nav-logo, .footer-logo { border-radius:var(--r-sm); }
+
+/* ── Fix connected-grid sections: turn dividers into spaced rounded cards ── */
+/* Stats strip — was a banded row with vertical dividers */
+.stats-strip {
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  background:transparent;
+  border:none;
+}
+.stat-item {
+  border-right:none !important;
+  border-bottom:none !important;
+  border-top:none !important;
+  background:var(--bg2);
+  border:1px solid var(--border);
+}
+
+/* Process list — was 4 boxes with shared 1px dividers */
+.process-list {
+  gap:16px;
+  border-left:none !important;
+}
+.process-step {
+  border-right:none !important;
+  border-bottom:none !important;
+  background:var(--bg2);
+  border:1px solid var(--border);
+}
+
+/* What We Shoot grid — was border-frame with 1px gaps */
+.shoot-grid {
+  background:transparent !important;
+  border:none !important;
+  gap:12px;
+}
+.shoot-item {
+  background:var(--bg2);
+  border:1px solid var(--border);
+}
+
+/* About floating label — bump radius so it reads as a tag, not a banner */
+.about-img-label { border-radius:var(--r-md); }
+/* Founder badge */
+.founder-exp-badge { border-radius:var(--r-md); }
+/* Real-estate image badge */
+.re-img-badge { border-radius:var(--r-md); }
+
+/* Mobile-tweak: slightly tighter radius on small screens so it doesn't look bubbly */
+@media(max-width:768px){
+  .service-card,
+  .industry-card,
+  .pkg-card,
+  .work-item,
+  .re-feat,
+  .testi-card,
+  .process-step { border-radius:var(--r-md); }
+  .hero-main-img-wrap,
+  .hero-main-img,
+  .about-img-wrap,
+  .about-img,
+  .work-img,
+  .re-img-main,
+  .re-img-stack,
+  .founder-img,
+  .founder-img-wrap { border-radius:var(--r-md); }
+}
 </style>
 </head>
 <body>
