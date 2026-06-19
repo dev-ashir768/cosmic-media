@@ -68,33 +68,19 @@ a { text-decoration:none; color:inherit; }
 /* ── UTILITY ── */
 .container { max-width:1320px; margin:0 auto; padding:0 var(--pad); }
 
-/* Scroll reveal — CSS only, no GSAP dependency */
-[data-reveal] {
-  opacity:0;
-  transform:translateY(36px);
-  transition:opacity .7s ease, transform .7s ease;
-}
-[data-reveal].in {
-  opacity:1;
-  transform:none;
-}
-[data-reveal="left"]  { transform:translateX(-36px); }
-[data-reveal="left"].in  { transform:none; }
-[data-reveal="right"] { transform:translateX(36px); }
-[data-reveal="right"].in { transform:none; }
-[data-reveal="scale"] { transform:scale(.95) translateY(20px); }
-[data-reveal="scale"].in { transform:none; }
+/* ── SCROLL REVEAL — GSAP-powered, IntersectionObserver triggered ── */
+/* Elements start invisible; GSAP animates them in when observed */
+[data-reveal], .reveal { opacity:0; will-change:transform,opacity; }
 
-/* stagger siblings */
-[data-reveal]:nth-child(2) { transition-delay:.08s; }
-[data-reveal]:nth-child(3) { transition-delay:.16s; }
-[data-reveal]:nth-child(4) { transition-delay:.24s; }
-[data-reveal]:nth-child(5) { transition-delay:.32s; }
-[data-reveal]:nth-child(6) { transition-delay:.40s; }
+/* section-tag line — gradient underline grows in */
+.section-tag { position:relative; }
 
-/* legacy .reveal kept for compat */
-.reveal { opacity:0; transform:translateY(36px); transition:opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity:1; transform:none; }
+/* clip-path support check marker */
+.clip-ready [data-reveal="clip"] { clip-path:inset(0 100% 0 0); opacity:1; }
+
+/* Number counter pulse */
+@keyframes countPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+.counter-done { animation:countPulse .35s ease-out; }
 
 /* ── NAV ── */
 nav {
@@ -1658,40 +1644,118 @@ heroTL
   .from(['#b1','#b2','#b3'],  { opacity:0, y:18, scale:.9, duration:.55, stagger:.1, ease:'back.out(1.4)' }, '-=.5')
   .from('#heroScroll',        { opacity:0, duration:.35 }, '-=.15');
 
-/* ── 4. IntersectionObserver — reveal everything else ── */
+/* ── 4. GSAP-powered scroll reveals ── */
+
+// Animation presets per element type
+function getRevealAnim(el) {
+  const type = el.getAttribute('data-reveal') || '';
+  const tag  = el.tagName.toLowerCase();
+  const cls  = el.className || '';
+
+  // Section tags — fast slide + fade
+  if (cls.includes('section-tag') || cls.includes('about-tag')) {
+    return { from:{ opacity:0, x:-24 }, ease:'expo.out', dur:.55 };
+  }
+  // Big headlines — mask reveal upward
+  if (cls.includes('section-title') || cls.includes('about-title') || cls.includes('founder-name')) {
+    return { from:{ opacity:0, y:52, skewY:2 }, ease:'expo.out', dur:.8 };
+  }
+  // Cards — spring pop
+  if (cls.includes('service-card') || cls.includes('industry-card') || cls.includes('pkg-card') || cls.includes('testi-card')) {
+    return { from:{ opacity:0, y:60, scale:.92 }, ease:'back.out(1.5)', dur:.75 };
+  }
+  // Shoot items — fast cascade
+  if (cls.includes('shoot-item')) {
+    return { from:{ opacity:0, y:32, scale:.95 }, ease:'back.out(1.2)', dur:.55 };
+  }
+  // Images — scale + fade
+  if (tag === 'img' || cls.includes('img-wrap') || cls.includes('re-img') || cls.includes('founder-img-wrap') || cls.includes('about-img-wrap')) {
+    return { from:{ opacity:0, scale:.93, y:24 }, ease:'expo.out', dur:.9 };
+  }
+  // Process steps — slide up with bounce
+  if (cls.includes('process-step')) {
+    return { from:{ opacity:0, y:48 }, ease:'back.out(1.3)', dur:.7 };
+  }
+  // Feature rows / re-feat
+  if (cls.includes('re-feat') || cls.includes('founder-tag')) {
+    return { from:{ opacity:0, x:-20 }, ease:'expo.out', dur:.5 };
+  }
+  // Stats
+  if (cls.includes('stat-item')) {
+    return { from:{ opacity:0, y:40, scale:.9 }, ease:'back.out(1.6)', dur:.7 };
+  }
+  // left/right directional
+  if (type === 'left')  return { from:{ opacity:0, x:-56 }, ease:'expo.out', dur:.8 };
+  if (type === 'right') return { from:{ opacity:0, x:56  }, ease:'expo.out', dur:.8 };
+  if (type === 'scale') return { from:{ opacity:0, scale:.88, y:20 }, ease:'back.out(1.4)', dur:.75 };
+
+  // default — punchy up
+  return { from:{ opacity:0, y:40 }, ease:'expo.out', dur:.7 };
+}
+
+// Group siblings for stagger — fire as a batch
+const pendingGroups = new Map();
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    const el = entry.target;
-    // stagger children by their index inside parent
-    const siblings = Array.from(el.parentElement.children);
-    const idx = siblings.indexOf(el);
-    el.style.transitionDelay = (idx * 0.07) + 's';
-    el.classList.add('in');      // [data-reveal].in
-    el.classList.add('visible'); // .reveal.visible (legacy)
-    revealObserver.unobserve(el);
+    if (!entry.isIntersecting) return;
+    const el     = entry.target;
+    const parent = el.parentElement;
+
+    // Collect siblings that are also observed, animate as a group
+    if (!pendingGroups.has(parent)) {
+      pendingGroups.set(parent, []);
+      // Small delay so sibling entries in the same frame all register
+      requestAnimationFrame(() => {
+        const group = pendingGroups.get(parent) || [];
+        pendingGroups.delete(parent);
+
+        if (group.length === 1) {
+          // Solo element — animate individually
+          const cfg = getRevealAnim(group[0]);
+          gsap.fromTo(group[0],
+            cfg.from,
+            { opacity:1, x:0, y:0, scale:1, skewY:0, duration:cfg.dur, ease:cfg.ease, clearProps:'transform,skewY' }
+          );
+        } else {
+          // Multiple siblings — stagger them
+          const cfg = getRevealAnim(group[0]);
+          gsap.fromTo(group,
+            cfg.from,
+            { opacity:1, x:0, y:0, scale:1, skewY:0, duration:cfg.dur, ease:cfg.ease,
+              stagger:{ each:.1, ease:'power1.inOut' }, clearProps:'transform,skewY' }
+          );
+        }
+        group.forEach(e => revealObserver.unobserve(e));
+      });
+    }
+    pendingGroups.get(parent).push(el);
   });
-}, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+}, { threshold:0.07, rootMargin:'0px 0px -48px 0px' });
 
 document.querySelectorAll('[data-reveal], .reveal').forEach(el =>
   revealObserver.observe(el)
 );
 
-/* ── 5. Number counters ── */
+/* ── 5. Number counters — spring eased ── */
 function animateCount(el, target, dec){
-  const dur=1500, t0=performance.now();
+  const dur = 1800, t0 = performance.now();
   (function tick(now){
-    const p=Math.min((now-t0)/dur,1);
-    el.textContent=(target*(1-Math.pow(1-p,4))).toFixed(dec);
-    if(p<1) requestAnimationFrame(tick);
+    const p  = Math.min((now - t0) / dur, 1);
+    // ease: expo out feel
+    const ep = 1 - Math.pow(1 - p, 4);
+    el.textContent = (target * ep).toFixed(dec);
+    if (p < 1) { requestAnimationFrame(tick); }
+    else { el.textContent = target.toFixed(dec); el.classList.add('counter-done'); }
   })(t0);
 }
 document.querySelectorAll('[data-count]').forEach(el => {
   const obs = new IntersectionObserver(([e]) => {
-    if(!e.isIntersecting) return;
-    animateCount(el, parseFloat(el.dataset.count), parseInt(el.dataset.dec||0));
+    if (!e.isIntersecting) return;
+    // small delay so the card reveal fires first
+    setTimeout(() => animateCount(el, parseFloat(el.dataset.count), parseInt(el.dataset.dec||0)), 300);
     obs.unobserve(el);
-  }, { threshold:.5 });
+  }, { threshold:.4 });
   obs.observe(el);
 });
 
@@ -1701,11 +1765,13 @@ function switchPkg(id, btn) {
   document.querySelectorAll('.pkg-tab').forEach(el => el.classList.remove('active'));
   document.getElementById('pkg-' + id).classList.add('active');
   btn.classList.add('active');
-  // re-observe new cards
-  document.querySelectorAll('#pkg-' + id + ' [data-reveal]').forEach(el => {
-    el.classList.remove('in');
-    revealObserver.observe(el);
-  });
+  // animate new cards in with spring stagger
+  const cards = document.querySelectorAll('#pkg-' + id + ' .pkg-card');
+  gsap.fromTo(cards,
+    { opacity:0, y:60, scale:.92 },
+    { opacity:1, y:0, scale:1, duration:.65, ease:'back.out(1.5)',
+      stagger:.12, clearProps:'transform' }
+  );
 }
 
 /* ── 7. FAQ toggle ── */
