@@ -3912,6 +3912,141 @@
       gap: 16px;
     }
 
+    /* ═══════════════════════════════════════════════
+       CONTACT FORM
+    ═══════════════════════════════════════════════ */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+      text-align: left;
+    }
+    .cta-left .cta-title,
+    .cta-left .cta-label,
+    .cta-left .cta-sub { text-align: left; }
+    .cta-left .cta-title { margin-bottom: 24px; }
+    .cta-left .cta-sub { margin-bottom: 32px; }
+    .cta-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cta-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 20px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: var(--r-md);
+      transition: background .25s, transform .25s;
+      width: fit-content;
+    }
+    .cta-contact:hover {
+      background: rgba(255, 255, 255, .18);
+      transform: translateX(4px);
+    }
+    .cta-contact svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .cta-form {
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: var(--r-lg);
+      padding: clamp(24px, 3.5vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-field label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 600;
+    }
+    .form-field label .opt {
+      color: rgba(255, 255, 255, .55);
+      letter-spacing: .05em;
+      text-transform: none;
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      background: rgba(0, 0, 0, .25);
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255, 255, 255, .5);
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--white);
+      background: rgba(0, 0, 0, .35);
+    }
+    .form-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 44px;
+      cursor: pointer;
+    }
+    .form-field select option { color: #111; }
+    .form-field textarea { resize: vertical; min-height: 110px; font-family: 'Inter', sans-serif; }
+    .cta-submit {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .cta-submit svg { width: 16px; height: 16px; }
+    .form-note {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .65);
+      letter-spacing: .03em;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .cta-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      #cta { padding: 56px var(--pad); }
+      .cta-form { padding: 22px; }
+      .cta-submit { width: 100%; justify-content: center; }
+    }
+
     /* About stats — was connected 2x2 grid with 1px dark gaps */
     .about-stats {
       background: transparent !important;
@@ -4526,7 +4661,7 @@
             </div>
           </div>
         </div>
-        <div class="about-img-wrap" data-reveal">
+        <div class="about-img-wrap">
           <img src="content/DSC06458.jpg.jpeg" alt="Cosmic Media production team" class="about-img">
           <div class="about-img-label">
             <span>Est. 2014</span>
@@ -5281,14 +5416,68 @@
   <!-- CTA -->
   <section id="cta">
     <div class="cta-bg" aria-hidden="true">SHOOT</div>
-    <div class="container" style="position:relative;">
-      <p class="cta-label">Ready to Create?</p>
-      <h2 class="cta-title">LET'S MAKE<br>CONTENT<br>THAT SELLS.</h2>
-      <p class="cta-sub">Book a shoot or ask about our monthly packages. One conversation is all it takes.</p>
-      <div class="cta-btns">
-        <button class="btn-white" onclick="window.location='mailto:info@cosmicmedia.ae'">Book a Shoot</button>
-        <button class="btn-white-out" onclick="window.open('https://wa.me/971500000000')">WhatsApp Us</button>
+    <div class="container cta-grid" style="position:relative;">
+      <div class="cta-left">
+        <p class="cta-label">Ready to Create?</p>
+        <h2 class="cta-title">LET'S MAKE<br>CONTENT<br>THAT SELLS.</h2>
+        <p class="cta-sub">Tell us about your project. We'll get back within 24 hours.</p>
+        <div class="cta-contacts">
+          <a href="mailto:info@cosmicmedia.ae" class="cta-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@cosmicmedia.ae
+          </a>
+          <a href="tel:+971500000000" class="cta-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +971 50 000 0000
+          </a>
+          <a href="https://wa.me/971500000000" class="cta-contact" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.554 4.107 1.523 5.836L.057 23.999l6.304-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.002-1.368l-.359-.213-3.722.976.994-3.634-.234-.374A9.817 9.817 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
       </div>
+      <form class="cta-form" onsubmit="return handleContactSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" required placeholder="Your full name">
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" required placeholder="you@brand.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="+971 50 000 0000">
+          </div>
+          <div class="form-field">
+            <label for="cf-service">Service</label>
+            <select id="cf-service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Real Estate Films</option>
+              <option>Social Media Reels</option>
+              <option>Commercial Ads</option>
+              <option>Corporate Films</option>
+              <option>Restaurant Content</option>
+              <option>Brand Photography</option>
+              <option>Drone Cinematography</option>
+              <option>Monthly Content Package</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Project Details</label>
+          <textarea id="cf-message" name="message" rows="4" required placeholder="Tell us about your brand, goals, timeline and budget..."></textarea>
+        </div>
+        <button type="submit" class="btn-white cta-submit">
+          Send Inquiry
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-note">By submitting, your default email client will open with the inquiry pre-filled.</p>
+      </form>
     </div>
   </section>
 
@@ -5661,6 +5850,33 @@
         }, 240);
       }, 65);
     })();
+
+    // Contact form handler — opens mail client with pre-filled inquiry
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const f = e.target;
+      const name = f.name.value.trim();
+      const email = f.email.value.trim();
+      const phone = f.phone.value.trim();
+      const service = f.service.value;
+      const message = f.message.value.trim();
+      const subject = `New Inquiry — ${service} — ${name}`;
+      const body =
+        `Hi Cosmic Media team,\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        (phone ? `Phone: ${phone}\n` : '') +
+        `Service: ${service}\n\n` +
+        `Project Details:\n${message}\n\n` +
+        `Sent from cosmicmedia.ae`;
+      const mailto = `mailto:info@cosmicmedia.ae?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      const btn = f.querySelector('.cta-submit');
+      const original = btn.innerHTML;
+      btn.innerHTML = 'Opening your email…';
+      setTimeout(() => { btn.innerHTML = original; }, 3000);
+      return false;
+    }
   </script>
 
 </body>
